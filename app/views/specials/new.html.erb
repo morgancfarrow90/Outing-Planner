@@ -1,0 +1,52 @@
+<h1>Create Special</h1>
+
+<%=form_with model: @special do |f| %>
+
+  <%=f.label :name%>
+  <%=f.text_field :name%>
+  <br><br>
+
+  <%=f.label :address%>
+  <%=f.text_field :address%>
+  <br><br>
+
+  <%=f.label :start_time%><p>Enter as millitary time</p>
+  <%=f.number_field :start_time%>
+  <br><br>
+
+  <%=f.label :end_time%><p>Enter as millitary time</p>
+  <%=f.number_field :end_time%>
+  <br><br>
+
+  <%=f.label :monday%>
+  <%=f.check_box :monday%><br>
+
+  <%=f.label :tuesday%>
+  <%=f.check_box :tuesday%><br>
+
+  <%=f.label :wednesday%>
+  <%=f.check_box :wednesday%><br>
+
+  <%=f.label :thursday%>
+  <%=f.check_box :thursday%><br>
+
+  <%=f.label :friday%>
+  <%=f.check_box :friday%><br>
+
+  <%=f.label :saturday%>
+  <%=f.check_box :saturday%><br>
+
+  <%=f.label :sunday%>
+  <%=f.check_box :sunday%><br>
+  <br>
+
+
+  <%=f.label :neighborhood_id%>
+  <%=f.collection_check_boxes :neighborhood_id, Neighborhood.all, :id, :name%>
+  <br>
+  <br>
+
+  <%= f.hidden_field :user_id, :value=> session[:user_id] %><br>
+
+  <%=f.submit%>
+<%end%>

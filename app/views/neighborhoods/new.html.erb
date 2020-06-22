@@ -1,0 +1,18 @@
+<h1>Create Neighborhood</h1>
+
+<%=form_with model: @neighborhood do |f| %>
+
+  <%=f.label :name%>
+  <%=f.text_field :name%>
+  <br><br>
+
+  <%=f.label :city%>
+  <%=f.text_field :city%>
+  <br><br>
+
+  <%=f.label :state%>
+  <%=f.text_field :state%>
+  <br><br>
+
+  <%=f.submit%>
+<%end%>

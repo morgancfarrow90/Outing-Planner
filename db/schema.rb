@@ -12,12 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2020_06_22_162504) do
 
-  create_table "days", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "neighborhoods", force: :cascade do |t|
     t.string "name"
     t.string "city"
@@ -32,7 +26,13 @@ ActiveRecord::Schema.define(version: 2020_06_22_162504) do
     t.string "address"
     t.integer "start_time"
     t.integer "end_time"
-    t.integer "day_id"
+    t.boolean "monday", default: false
+    t.boolean "tuesday", default: false
+    t.boolean "wednesday", default: false
+    t.boolean "thursday", default: false
+    t.boolean "friday", default: false
+    t.boolean "saturday", default: false
+    t.boolean "sunday", default: false
     t.integer "neighborhood_id"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
@@ -44,7 +44,13 @@ ActiveRecord::Schema.define(version: 2020_06_22_162504) do
     t.text "details"
     t.string "address"
     t.integer "neighborhood_id"
-    t.integer "day_id"
+    t.boolean "monday", default: false
+    t.boolean "tuesday", default: false
+    t.boolean "wednesday", default: false
+    t.boolean "thursday", default: false
+    t.boolean "friday", default: false
+    t.boolean "saturday", default: false
+    t.boolean "sunday", default: false
     t.integer "start_time"
     t.integer "end_time"
     t.integer "user_id"

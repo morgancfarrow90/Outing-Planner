@@ -1,0 +1,14 @@
+<h1><%=@site.name %></h1>
+
+<h2><%=@site.address%></h2>
+<h2>Start Time: <%=@site.start_time%> | End Time: <%=@site.end_time%> <br>
+<h3>Days: <br> </h3>
+<%  if @site.monday %>
+    <%= "Monday" %>
+    <%end%>
+
+    <%  if @site.tuesday %>
+        <%= "Tuesday" %>
+        <%end%>
+
+<!-- <div><%=link_to "Delete", destroy_site_path, method:"delete"%> </div> -->

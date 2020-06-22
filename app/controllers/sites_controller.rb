@@ -24,7 +24,7 @@ class SitesController < ApplicationController
     params.require(:site).permit(
       :name,
       :address,
-      :neighbhorhood_id[][],
+      :neighbhorhood_id,
       :user_id,
       :monday,
       :tuesday,

@@ -1,0 +1,13 @@
+<h1>Plan Your Outing</h1>
+<h2>Next pick your stops</h2>
+
+<%= form_with model: @outing do |f| %>
+
+<%= f.label :site_stops%>
+<% @outing.neighborhood.sites each do |site| %>
+<%= site.name%>
+<%end%>
+
+<%= f.hidden_field :user_id, :value=> session[:user_id] %><br>
+
+<%=f.submit%>

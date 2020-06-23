@@ -5,7 +5,6 @@ class SitesController < ApplicationController
   end
 
   def create
-
     @site= Site.new(site_params)
     if @site.save
       redirect_to site_path(@site)
@@ -18,13 +17,18 @@ class SitesController < ApplicationController
     @site= Site.find_by(id: params[:id])
   end
 
+  def destroy
+    @site= Site.find_by(id: params[:id])
+    @site.delete
+  end
+
   private
 
   def site_params
     params.require(:site).permit(
       :name,
       :address,
-      :neighbhorhood_id,
+      :neighborhood_id,
       :user_id,
       :monday,
       :tuesday,
@@ -34,7 +38,8 @@ class SitesController < ApplicationController
       :saturday,
       :sunday,
       :start_time,
-      :end_time
+      :end_time,
+      :details
     )
   end
 

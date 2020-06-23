@@ -1,0 +1,2 @@
+class SpecialStopsController < ApplicationController
+end

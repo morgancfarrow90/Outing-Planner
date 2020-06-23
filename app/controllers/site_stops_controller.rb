@@ -1,0 +1,2 @@
+class SiteStopsController < ApplicationController
+end

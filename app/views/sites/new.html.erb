@@ -42,8 +42,12 @@
 
 
   <%=f.label :neighborhood_id%>
-  <%=f.collection_check_boxes :neighborhood_id, Neighborhood.all, :id, :name%>
+  <%=f.collection_radio_buttons :neighborhood_id, Neighborhood.all, :id, :name%>
   <br>
+  <br>
+
+  <%= f.label :details%>
+  <%= f.text_area :details%>
   <br>
 
   <%= f.hidden_field :user_id, :value=> session[:user_id] %><br>

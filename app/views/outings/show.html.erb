@@ -1,0 +1,13 @@
+<h1> Have Fun on Your Outing in <%=@outing.neighborhood.name%> </h1>
+
+  <h1>Stops:</h1>
+
+  <% @outing.sites.each do |site| %>
+    <%= site.name%>
+  <%end%>
+  <br>
+  <br>
+
+  <% @outing.specials.each do |special| %>
+    <%= special.name%>
+  <%end%>

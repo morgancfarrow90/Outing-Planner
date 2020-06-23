@@ -1,0 +1,13 @@
+<h1>Plan Your Outing</h1>
+<h2>First pick a neighbhood</h2>
+
+<%= form_with model: @outing do |f| %>
+
+<%= f.label :neighborhood_id%>
+<%=f.collection_radio_buttons :neighborhood_id, Neighborhood.all, :id, :name%>
+<br>
+
+<%= f.hidden_field :user_id, :value=> session[:user_id] %><br>
+
+<%=f.submit%>
+<%end%>

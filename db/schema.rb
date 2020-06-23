@@ -10,12 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_22_162504) do
+ActiveRecord::Schema.define(version: 2020_06_23_152748) do
 
   create_table "neighborhoods", force: :cascade do |t|
     t.string "name"
     t.string "city"
     t.string "state"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "outings", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "neighborhood_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "site_stops", force: :cascade do |t|
+    t.integer "outing_id"
+    t.integer "site_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -35,6 +49,13 @@ ActiveRecord::Schema.define(version: 2020_06_22_162504) do
     t.boolean "sunday", default: false
     t.integer "neighborhood_id"
     t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "special_stops", force: :cascade do |t|
+    t.integer "outing_id"
+    t.integer "special_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

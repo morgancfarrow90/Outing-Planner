@@ -33,7 +33,8 @@ class SpecialsController < ApplicationController
       :saturday,
       :sunday,
       :start_time,
-      :end_time
+      :end_time,
+      :details
     )
   end
 end

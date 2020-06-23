@@ -1,3 +1,33 @@
-<h1>Welcome, <%= @user.username%></h1>
+<h1><%=@special.name %></h1>
 
-<div><%=link_to "Sign Out", signout_path, method:"delete"%> </div>
+<h2><%=@special.address%></h2>
+<h2>Start Time: <%=@special.start_time%> | End Time: <%=@special.end_time%> <br>
+<h3>Days of the Week: </h3>
+
+    <% if @special.monday %>
+      <%= "Monday" %>
+    <%end%>
+
+    <% if @special.tuesday %>
+        <%= "Tuesday" %>
+    <%end%>
+
+    <% if @special.wednesday %>
+        <%= "Wednesday" %>
+    <%end%>
+
+    <% if @special.thursday %>
+        <%= "Thursday" %>
+    <%end%>
+
+    <% if @special.friday %>
+        <%= "Friday" %>
+    <%end%>
+
+    <% if @special.saturday %>
+        <%= "Saturday" %>
+    <%end%>
+
+    <% if @special.sunday %>
+        <%= "Sunday" %>
+    <%end%>
